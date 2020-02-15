@@ -37,8 +37,15 @@ function bubbleInitialize() {
   cleanupList.bubbleInterval = setInterval(bubbleShuffle, 450);
   cleanupList.bubbleShuffle = bubbleShuffle;
   cleanupList.loadingBubble = loadingBubble;
+  
+  if (!window.myGlobal) {
+    window.myGlobal = {};
+  }  
+  if (!window.myGlobal.cleanupf) {
+    window.myGlobal.cleanupf = {};
+  }
 
-  cleanupFunctions.addProduct = function () {
+  window.myGlobal.cleanupf.addProduct = function () {
     clearInterval(cleanupList.bubbleInterval);
     delete cleanupList.bubbleShuffle;
     delete cleanupList.loadingBubble;
