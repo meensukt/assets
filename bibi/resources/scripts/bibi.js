@@ -5723,13 +5723,12 @@
             var t = U.isBin(e),
                 n = new XMLHttpRequest,
                 i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
-            let url = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
+            i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
 console.log("downloading...")
             console.log(i)
-            console.log(url)
 
             return e.Retlieving = new Promise((function(e, r) {
-                n.open("GET", url, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
+                n.open("GET", i, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
                     return 200 == n.status ? e() : r()
                 }, n.onerror = function() {
                     return r()
@@ -5928,7 +5927,6 @@ console.log("downloading...")
           console.log(e)
           console.log(e.Content)
           console.log(e.Path)
-          e.Path="";
           console.log("type:"+/\.(xml|opf|ncx)$/i.test(e.Path) ? "text/xml" : "text/html");
             return U.file(e).then((function(e) {
               let parsed = (new DOMParser).parseFromString(e.Content, /\.(xml|opf|ncx)$/i.test(e.Path) ? "text/xml" : "text/html");
