@@ -2325,7 +2325,7 @@
             }
         };
         k.loadContainer.process = function(e) {
-          console.log(e.getElementsByTagName("rootfile")[0].getAttribute("full-path"))
+          console.log(e.getElementsByTagName("rootfile")[0].getAttribute("full-path"));
             return A.Package.Source.Path = e.getElementsByTagName("rootfile")[0].getAttribute("full-path")
         }
         ,
