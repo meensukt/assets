@@ -1645,6 +1645,8 @@
                 }
             };
         k.loadContainer.process = function(e) {
+          console.log('full-path:...')
+          console.log(e.getElementsByTagName("rootfile")[0].getAttribute("full-path"));
             return A.Package.Source.Path = e.getElementsByTagName("rootfile")[0].getAttribute("full-path")
         }, k.loadPackage = function() {
             return U.openDocument(A.Package.Source).then(k.loadPackage.process)
@@ -5738,6 +5740,7 @@
                 r.onloadend = function() {
                     return 206 != r.status ? i() : n()
                 }, r.open("GET", e, !0), r.setRequestHeader("Range", "bytes=" + t), r.send(null)
+                console.log(r)
             }))
         }, U.file = function(e) {
             var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
