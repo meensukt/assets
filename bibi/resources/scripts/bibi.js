@@ -5724,8 +5724,8 @@
                 n = new XMLHttpRequest,
                 i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
             i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
-console.log("downloading...")
-            console.log(i)
+
+console.log("downloading..."+i)
 
             return e.Retlieving = new Promise((function(e, r) {
                 n.open("GET", i, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
