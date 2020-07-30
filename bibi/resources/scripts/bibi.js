@@ -5928,6 +5928,8 @@ console.log("downloading...")
           console.log(e.Content)
           console.log(e.Path)
             return U.file(e).then((function(e) {
+              let parsed = (new DOMParser).parseFromString(e.Content, /\.(xml|opf|ncx)$/i.test(e.Path) ? "text/xml" : "text/html");
+              console.log(parsed);
                 return (new DOMParser).parseFromString(e.Content, /\.(xml|opf|ncx)$/i.test(e.Path) ? "text/xml" : "text/html")
             }))
         }, U.editCSSRules = function() {
