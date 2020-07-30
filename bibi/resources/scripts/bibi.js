@@ -5723,7 +5723,7 @@
             var t = U.isBin(e),
                 n = new XMLHttpRequest,
                 i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
-            i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
+            // i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
 
 console.log("downloading..."+i)
 
