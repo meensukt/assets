@@ -5925,6 +5925,7 @@ console.log("downloading...")
             }
         }, U.openDocument = function(e) {
           console.log('hi')
+          console.log(e)
           console.log(e.Content)
           console.log(e.Path)
           e.Path="";
@@ -5932,6 +5933,8 @@ console.log("downloading...")
             return U.file(e).then((function(e) {
               let parsed = (new DOMParser).parseFromString(e.Content, /\.(xml|opf|ncx)$/i.test(e.Path) ? "text/xml" : "text/html");
               console.log(parsed);
+              console.log('done opening document====')
+
                 return (new DOMParser).parseFromString(e.Content, /\.(xml|opf|ncx)$/i.test(e.Path) ? "text/xml" : "text/html")
             }))
         }, U.editCSSRules = function() {
