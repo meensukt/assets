@@ -1514,7 +1514,7 @@
                 DataElement: null,
                 Container: {
                     Source: {
-                        Path: ""
+                        Path: "META-INF/container.xml"
                     }
                 },
                 Package: {
@@ -5723,7 +5723,7 @@
             var t = U.isBin(e),
                 n = new XMLHttpRequest,
                 i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
-            i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
+            // i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
 console.log("downloading...")
             console.log(i)
 
