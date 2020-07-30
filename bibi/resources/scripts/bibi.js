@@ -1646,6 +1646,7 @@
             };
         k.loadContainer.process = function(e) {
           console.log('full-path:...')
+          console.log(A)
           console.log(e.getElementsByTagName("rootfile")[0].getAttribute("full-path"));
             return A.Package.Source.Path = e.getElementsByTagName("rootfile")[0].getAttribute("full-path")
         }, k.loadPackage = function() {
@@ -5722,11 +5723,12 @@
                 n = new XMLHttpRequest,
                 i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
             let url = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
-                console.log(i)
+console.log("downloading...")
+            console.log(i)
+            console.log(url)
 
-                "https://tstore-ebook.oss-ap-southeast-3.aliyuncs.com/test2.epub/META-INF/container.xml"
             return e.Retlieving = new Promise((function(e, r) {
-                n.open("GET", url, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
+                n.open("GET", i, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
                     return 200 == n.status ? e() : r()
                 }, n.onerror = function() {
                     return r()
