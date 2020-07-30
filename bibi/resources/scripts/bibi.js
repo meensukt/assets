@@ -5728,7 +5728,7 @@ console.log("downloading...")
             console.log(url)
 
             return e.Retlieving = new Promise((function(e, r) {
-                n.open("GET", i, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
+                n.open("GET", url, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
                     return 200 == n.status ? e() : r()
                 }, n.onerror = function() {
                     return r()
