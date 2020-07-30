@@ -1514,7 +1514,7 @@
                 DataElement: null,
                 Container: {
                     Source: {
-                        Path: "META-INF/container.xml"
+                        Path: ""
                     }
                 },
                 Package: {
