@@ -5721,6 +5721,7 @@
             var t = U.isBin(e),
                 n = new XMLHttpRequest,
                 i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
+                console.log(i)
             return e.Retlieving = new Promise((function(e, r) {
                 n.open("GET", i, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
                     return 200 == n.status ? e() : r()
