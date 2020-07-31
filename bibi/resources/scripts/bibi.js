@@ -5359,6 +5359,8 @@
         }, D.initialize = function() {
             var e, t = location.href.split("?")[0];
             D.bookshelf = new URL(D.bookshelf || "../../bibi-bookshelf", D.Script.src).href.replace(/\/$/, ""), D.extensions = ((e = document.getElementById("bibi-preset").getAttribute("data-bibi-extensions")) && (e = e.trim().replace(/\s+/, " ").split(" ").map((function(e) {
+              console.log('oh hi')
+              console.log(new URL(e, t).href)
                 return {
                     src: new URL(e, t).href
                 }
@@ -5491,9 +5493,6 @@
                         })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin),
                         console.log(F.book),
                         console.log(F.bookshelf),
-                        console.log(new URL(F.book, F.bookshelf + "/")),
-                        console.log(new URL(F.book, F.bookshelf + "/").href),
-                        console.log(new URLSearchParams(window.location.search).get('book')),
 
 
                          F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href : "", !F["book-data"] && F.book && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
