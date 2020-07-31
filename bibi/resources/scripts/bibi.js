@@ -1299,8 +1299,6 @@
                 var i = !1,
                     r = !1;
                     console.log("going to..... Fbook????")
-                    let alibaba = new URLSearchParams(window.location.search);
-                    F.book = F.book + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
                     console.log(F.book)
                     console.log(F)
                 F.book ? (U.isToBeExtractedIfNecessary(F.book) && (i = !0), F.zine && (r = !0)) : (F["accept-local-file"] || F["accept-blob-converted-data"]) && (i = r = !0), r && n.unshift("zine.js"), (i ? (F.book ? U.tryRangeRequest().then((function() {
@@ -5360,9 +5358,10 @@
             var e, t = location.href.split("?")[0];
             D.bookshelf = new URL(D.bookshelf || "../../bibi-bookshelf", D.Script.src).href.replace(/\/$/, ""), D.extensions = ((e = document.getElementById("bibi-preset").getAttribute("data-bibi-extensions")) && (e = e.trim().replace(/\s+/, " ").split(" ").map((function(e) {
               console.log('oh hi')
-              console.log(new URL(e, t).href)
+              let alibaba = new URLSearchParams(window.location.search);
+              let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
                 return {
-                    src: new URL(e, t).href
+                    src: src
                 }
             }))).length && (D.extensions = e), Array.isArray(D.extensions) ? D.extensions.filter((function(e) {
                 if (e.hasOwnProperty("-spell-of-activation-")) {
@@ -5465,6 +5464,10 @@
         };
         var N = {
                 initialize: function() {
+                  console.log("THE N WORD!!!!")
+                  // let alibaba = new URLSearchParams(window.location.search);
+                  // let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
+
                     var e = document.getElementById("bibi-preset").getAttribute("data-bibi-bookshelf");
                     e && (N.bookshelf = new URL(e, location.href.split("?")[0])), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
                     var t = document.getElementById("bibi-book-data");
