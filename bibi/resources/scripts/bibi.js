@@ -5731,10 +5731,10 @@ let alibaba;
             if (F["extract-if-necessary"].includes("")) return !/(\.[\w\d]+)+$/.test(e);
             for (var t = F["extract-if-necessary"].length, n = 0; n < t; n++){
               console.log(F["extract-if-necessary"][n])
+              console.log(new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\."), "i"))
+              console.log(e)
                 if (new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\.") + "$", "i").test(e)){
                   console.log('gotcha')
-                  console.log(new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\."), "i"))
-                  console.log(e)
                   return !0;
                 }
               }
