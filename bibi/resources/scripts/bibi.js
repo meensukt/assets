@@ -1299,11 +1299,11 @@
                 var i = !1,
                     r = !1;
                     console.log("going to..... Fbook????")
+                    let alibaba = new URLSearchParams(window.location.search);
+                    F.book = F.book + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
                     console.log(F.book)
                     console.log(F)
-                    let alibaba = new URLSearchParams(window.location.search);
-                    let loadUrl = F.book + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
-                F.book ? (U.isToBeExtractedIfNecessary(loadUrl) && (i = !0), F.zine && (r = !0)) : (F["accept-local-file"] || F["accept-blob-converted-data"]) && (i = r = !0), r && n.unshift("zine.js"), (i ? (F.book ? U.tryRangeRequest().then((function() {
+                F.book ? (U.isToBeExtractedIfNecessary(F.book) && (i = !0), F.zine && (r = !0)) : (F["accept-local-file"] || F["accept-blob-converted-data"]) && (i = r = !0), r && n.unshift("zine.js"), (i ? (F.book ? U.tryRangeRequest().then((function() {
                     return "on-the-fly"
                 })) : Promise.reject()).catch((function() {
                     return "at-once"
