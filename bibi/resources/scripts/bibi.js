@@ -5368,6 +5368,8 @@
                     var t = e["-spell-of-activation-"];
                     if (!t || !/^[a-zA-Z0-9_\-]+$/.test(t) || !R.hasOwnProperty(t)) return !1
                 }
+                console.log("D===")
+                console.log(e.src)
                 return !(!e || !e.src || "string" != typeof e.src) && (e.src = new URL(e.src, D.Script.src).href)
             })) : []), delete D.initialize
         };
@@ -5471,9 +5473,6 @@
                     let newurl = new URL(e, location.href.split("?")[0]).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature');
                     e && (N.bookshelf = newurl), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
 
-                    console.log(e)
-                    console.log(N.bookshelf)
-                    console.log(N.book)
                     var t = document.getElementById("bibi-book-data");
                     console.log(t)
                     if (t) {
@@ -5488,9 +5487,6 @@
                         var r = location.href.replace(/([\?&])book=[^&]*&?/, "$1");
                         r.split("?")[1] || (r = r.split("?")[0]), history.replaceState(null, document.title, r)
                     }
-                    console.log("N again...")
-                    console.log(N.bookshelf)
-                    console.log(N.book)
 console.log("==Done with N==")
                     delete N.initialize
                 }
@@ -5503,12 +5499,12 @@ let alibaba;
                     if (sML.applyRtL(F, D, "ExceptFunctions"), sML.applyRtL(F, R, "ExceptFunctions"), sML.applyRtL(F, N, "ExceptFunctions"), x.SettingTypes["yes-no"].concat(x.SettingTypes_PresetOnly["yes-no"]).concat(x.SettingTypes_UserOnly["yes-no"]).forEach((function(e) {
                             return F[e] = "yes" == F[e] || "mobile" == F[e] && U.TouchOS || "desktop" == F[e] && !U.TouchOS
                         })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin),
-                        console.log(F.book),
-                        console.log(F.bookshelf),
+                        console.log("F thinks book is:"+F.book),
+                        console.log("F thinks bookshelf is:"+F.bookshelf),
 
                         alibaba = new URLSearchParams(window.location.search),
 
-                         F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                         F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin))) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
                     "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
                         0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
                     })), F["use-menubar"] || (F["use-full-height"] = !0), (sML.UA.Trident || sML.UA.EdgeHTML) && (F["pagination-method"] = "auto"), F["reader-view-mode"] || (F["reader-view-mode"] = "paged"), U.Biscuits && W.bind("bibi:initialized-book", (function() {
@@ -6273,6 +6269,9 @@ console.log("......")
                     return new Promise((function(t, n) {
                         if (!e.src || "string" != typeof e.src) return n('"path" of the Extension Seems to Be Invalid. ("'.concat(e.src, '")'));
                         var i = new URL(e.src).origin;
+                        console.log("inside X")
+                        console.log(e.src)
+                        console.log(i)
                         if (!F["trustworthy-origins"].includes(i)) return n('The Origin Is Not Allowed. ("'.concat(e.src, '")'));
                         e.Script = document.head.appendChild(sML.create("script", {
                             className: "bibi-extension-script",
