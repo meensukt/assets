@@ -5749,11 +5749,16 @@ console.log("......")
             var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : x.Script.src,
                 t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "0-0";
             return new Promise((function(n, i) {
+              console.log('trying rangereq')
+              console.log(e)
+              console.log(arguments)
+              console.log(x.Script.src)
                 var r = new XMLHttpRequest;
                 r.onloadend = function() {
                     return 206 != r.status ? i() : n()
                 }, r.open("GET", e, !0), r.setRequestHeader("Range", "bytes=" + t), r.send(null)
                 console.log(r)
+                console.log('ok...')
             }))
         }, U.file = function(e) {
             var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
