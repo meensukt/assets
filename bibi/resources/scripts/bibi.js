@@ -5735,12 +5735,15 @@ console.log(A.Path)
 console.log("......")
 
             return e.Retlieving = new Promise((function(e, r) {
+              console.log("do we ever got here1")
                 n.open("GET", url, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
                     return 200 == n.status ? e() : r()
                 }, n.onerror = function() {
                     return r()
                 }, n.send(null)
             })).then((function() {
+              console.log("do we ever got here2")
+
                 return e.DataType = t ? "Blob" : "Text", e.Content = n.response, e.Retlieved = !0, delete e.Retlieving, e
             })).catch((function() {
                 return delete e.Retlieving, Promise.reject(404 == n.status ? x.ErrorMessages.NotFound : 0 == n.status ? x.ErrorMessages.CORSBlocked : n.status + " " + n.statusText)
@@ -5751,7 +5754,8 @@ console.log("......")
             return new Promise((function(n, i) {
               console.log('trying rangereq')
               console.log(e)
-              console.log(arguments)
+              console.log(arguments[0].toString())
+              console.log(arguments[1].toString())
               console.log(x.Script.src)
                 var r = new XMLHttpRequest;
                 r.onloadend = function() {
