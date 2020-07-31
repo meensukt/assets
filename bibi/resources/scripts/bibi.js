@@ -1299,6 +1299,8 @@
                 var i = !1,
                     r = !1;
                     console.log("going to..... Fbook????")
+                    console.log(F.book)
+                    console.log(F)
                 F.book ? (U.isToBeExtractedIfNecessary(F.book) && (i = !0), F.zine && (r = !0)) : (F["accept-local-file"] || F["accept-blob-converted-data"]) && (i = r = !0), r && n.unshift("zine.js"), (i ? (F.book ? U.tryRangeRequest().then((function() {
                     return "on-the-fly"
                 })) : Promise.reject()).catch((function() {
