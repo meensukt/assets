@@ -5754,11 +5754,11 @@ console.log("......")
             return new Promise((function(n, i) {
               console.log('trying rangereq')
               console.log(e)
-              console.log(arguments[0].toString())
-              console.log(arguments[1].toString())
               console.log(x.Script.src)
                 var r = new XMLHttpRequest;
                 r.onloadend = function() {
+                  console.log(i.toString())
+                  console.log(n.toString())
                     return 206 != r.status ? i() : n()
                 }, r.open("GET", e, !0), r.setRequestHeader("Range", "bytes=" + t), r.send(null)
                 console.log(r)
