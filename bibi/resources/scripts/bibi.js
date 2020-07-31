@@ -5722,11 +5722,18 @@ let alibaba;
                 i = U.getTimeLabel(n);
             return t[i] || (t[i] = []), t[i].push(e), n
         }, U.isToBeExtractedIfNecessary = function(e) {
+          console.log("extract_if_necessary??")
+          console.log(F["extract-if-necessary"])
+          console.log(F["extract-if-necessary"].includes(""))
             if (!e || !F["extract-if-necessary"].length) return !1;
             if (F["extract-if-necessary"].includes("*")) return !0;
             if (F["extract-if-necessary"].includes("")) return !/(\.[\w\d]+)+$/.test(e);
-            for (var t = F["extract-if-necessary"].length, n = 0; n < t; n++)
-                if (new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\.") + "$", "i").test(e)) return !0;
+            for (var t = F["extract-if-necessary"].length, n = 0; n < t; n++){
+                if (new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\.") + "$", "i").test(e)){
+                  console.log(n)
+                  return !0;
+                }
+              }
             return !1
         }, U.src = function(e) {
             return A.Package.Manifest[e.Path] || (A.Package.Manifest[e.Path] = e), e["media-type"] || (e["media-type"] = U.getContentType(e.Path)), A.Package.Manifest[e.Path]
