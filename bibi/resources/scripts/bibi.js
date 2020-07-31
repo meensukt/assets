@@ -5484,6 +5484,7 @@
                     for (var e in F) "function" != typeof F[e] && delete F[e];
 
                     console.log('initializing la la la')
+                    let alibaba;
                     if (sML.applyRtL(F, D, "ExceptFunctions"), sML.applyRtL(F, R, "ExceptFunctions"), sML.applyRtL(F, N, "ExceptFunctions"), x.SettingTypes["yes-no"].concat(x.SettingTypes_PresetOnly["yes-no"]).concat(x.SettingTypes_UserOnly["yes-no"]).forEach((function(e) {
                             return F[e] = "yes" == F[e] || "mobile" == F[e] && U.TouchOS || "desktop" == F[e] && !U.TouchOS
                         })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin),
@@ -5492,7 +5493,7 @@
                         console.log(new URL(F.book, F.bookshelf + "/")),
                         console.log(new URL(F.book, F.bookshelf + "/").href),
                         console.log(new URLSearchParams(window.location.search).get('book')),
-                        let alibaba = new URLSearchParams(window.location.search),
+                        alibaba = new URLSearchParams(window.location.search),
 
 
                          F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
