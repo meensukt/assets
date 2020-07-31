@@ -5482,6 +5482,12 @@
             F = {
                 initialize: function() {
                     for (var e in F) "function" != typeof F[e] && delete F[e];
+
+                    console.log('initializing la la la')
+                    console.log(F.book)
+                    console.log(F.bookshelf)
+                    console.log(URL(F.book, F.bookshelf + "/"))
+                    console.log(URL(F.book, F.bookshelf + "/").href)
                     if (sML.applyRtL(F, D, "ExceptFunctions"), sML.applyRtL(F, R, "ExceptFunctions"), sML.applyRtL(F, N, "ExceptFunctions"), x.SettingTypes["yes-no"].concat(x.SettingTypes_PresetOnly["yes-no"]).concat(x.SettingTypes_UserOnly["yes-no"]).forEach((function(e) {
                             return F[e] = "yes" == F[e] || "mobile" == F[e] && U.TouchOS || "desktop" == F[e] && !U.TouchOS
                         })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin), F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href : "", !F["book-data"] && F.book && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
