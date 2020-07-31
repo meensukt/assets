@@ -13,6 +13,7 @@
     var t = {};
 
     function n(i) {
+      console.log("calling 'n'")
         if (t[i]) return t[i].exports;
         var r = t[i] = {
             i: i,
@@ -1297,6 +1298,7 @@
                 F["allow-scripts-in-content"] || n.push("sanitizer.js");
                 var i = !1,
                     r = !1;
+                    console.log("going to..... Fbook????")
                 F.book ? (U.isToBeExtractedIfNecessary(F.book) && (i = !0), F.zine && (r = !0)) : (F["accept-local-file"] || F["accept-blob-converted-data"]) && (i = r = !0), r && n.unshift("zine.js"), (i ? (F.book ? U.tryRangeRequest().then((function() {
                     return "on-the-fly"
                 })) : Promise.reject()).catch((function() {
@@ -5757,8 +5759,7 @@ console.log("......")
               console.log(x.Script.src)
                 var r = new XMLHttpRequest;
                 r.onloadend = function() {
-                  console.log(i.toString())
-                  console.log(n.toString())
+                  console.log('on load end!')
                     return 206 != r.status ? i() : n()
                 }, r.open("GET", e, !0), r.setRequestHeader("Range", "bytes=" + t), r.send(null)
                 console.log(r)
