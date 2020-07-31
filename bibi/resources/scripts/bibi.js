@@ -5733,7 +5733,7 @@ let alibaba;
               console.log(F["extract-if-necessary"][n])
               console.log(new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\."), "i"))
               console.log(e)
-                if (new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\.") + "$", "i").test(e)){
+                if (new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\."), "i").test(e)){
                   console.log('gotcha')
                   return !0;
                 }
