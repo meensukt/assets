@@ -5484,13 +5484,17 @@
                     for (var e in F) "function" != typeof F[e] && delete F[e];
 
                     console.log('initializing la la la')
-                    console.log(F.book)
-                    console.log(F.bookshelf)
-                    console.log(URL(F.book, F.bookshelf + "/"))
-                    console.log(URL(F.book, F.bookshelf + "/").href)
                     if (sML.applyRtL(F, D, "ExceptFunctions"), sML.applyRtL(F, R, "ExceptFunctions"), sML.applyRtL(F, N, "ExceptFunctions"), x.SettingTypes["yes-no"].concat(x.SettingTypes_PresetOnly["yes-no"]).concat(x.SettingTypes_UserOnly["yes-no"]).forEach((function(e) {
                             return F[e] = "yes" == F[e] || "mobile" == F[e] && U.TouchOS || "desktop" == F[e] && !U.TouchOS
-                        })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin), F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href : "", !F["book-data"] && F.book && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                        })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin);
+
+
+                        console.log(F.book)
+                        console.log(F.bookshelf)
+                        console.log(URL(F.book, F.bookshelf + "/"))
+                        console.log(URL(F.book, F.bookshelf + "/").href)
+
+                         F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href : "", !F["book-data"] && F.book && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
                     "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
                         0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
                     })), F["use-menubar"] || (F["use-full-height"] = !0), (sML.UA.Trident || sML.UA.EdgeHTML) && (F["pagination-method"] = "auto"), F["reader-view-mode"] || (F["reader-view-mode"] = "paged"), U.Biscuits && W.bind("bibi:initialized-book", (function() {
