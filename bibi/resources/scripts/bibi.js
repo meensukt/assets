@@ -5486,7 +5486,8 @@
                     console.log('initializing la la la')
                     if (sML.applyRtL(F, D, "ExceptFunctions"), sML.applyRtL(F, R, "ExceptFunctions"), sML.applyRtL(F, N, "ExceptFunctions"), x.SettingTypes["yes-no"].concat(x.SettingTypes_PresetOnly["yes-no"]).concat(x.SettingTypes_UserOnly["yes-no"]).forEach((function(e) {
                             return F[e] = "yes" == F[e] || "mobile" == F[e] && U.TouchOS || "desktop" == F[e] && !U.TouchOS
-                        })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin),                        console.log(F.book)
+                        })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin),
+                        console.log(F.book),
                         console.log(F.bookshelf),
                         console.log(URL(F.book, F.bookshelf + "/")),
                         console.log(URL(F.book, F.bookshelf + "/").href),
