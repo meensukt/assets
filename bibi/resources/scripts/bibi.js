@@ -5468,7 +5468,7 @@
                   let alibaba = new URLSearchParams(window.location.search);
 
                     var e = document.getElementById("bibi-preset").getAttribute("data-bibi-bookshelf");
-                    let newurl = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature');
+                    let newurl = new URL(e, location.href.split("?")[0]).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature');
                     e && (N.bookshelf = newurl), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
 
                     console.log(e)
