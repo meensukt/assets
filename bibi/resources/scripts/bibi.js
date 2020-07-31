@@ -5465,12 +5465,17 @@
         var N = {
                 initialize: function() {
                   console.log("THE N WORD!!!!")
+                  console.log(new URL(e, location.href.split("?")[0]))
                   // let alibaba = new URLSearchParams(window.location.search);
                   // let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
 
                     var e = document.getElementById("bibi-preset").getAttribute("data-bibi-bookshelf");
                     e && (N.bookshelf = new URL(e, location.href.split("?")[0])), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
+
+                    console.log(e)
+                    console.log(N)
                     var t = document.getElementById("bibi-book-data");
+                    console.log(t)
                     if (t) {
                         var n = t.innerText.trim();
                         if (n) {
@@ -5483,6 +5488,8 @@
                         var r = location.href.replace(/([\?&])book=[^&]*&?/, "$1");
                         r.split("?")[1] || (r = r.split("?")[0]), history.replaceState(null, document.title, r)
                     }
+                    console.log("N again...")
+                    console.log(N)
                     delete N.initialize
                 }
             },
