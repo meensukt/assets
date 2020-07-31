@@ -5465,12 +5465,11 @@
         var N = {
                 initialize: function() {
                   console.log("THE N WORD!!!!")
-                  console.log(new URL(e, location.href.split("?")[0]))
-                  // let alibaba = new URLSearchParams(window.location.search);
-                  // let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
+                  let alibaba = new URLSearchParams(window.location.search);
 
                     var e = document.getElementById("bibi-preset").getAttribute("data-bibi-bookshelf");
-                    e && (N.bookshelf = new URL(e, location.href.split("?")[0])), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
+                    let newurl = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature');
+                    e && (N.bookshelf = newurl), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
 
                     console.log(e)
                     console.log(N)
