@@ -5806,19 +5806,34 @@ let alibaba;
           let mything = (e = U.src(e)).Retlieving;
           console.log(mything)
           console.log(t)
-          console.log(e.Path)
           console.log("^===extracting vars")
 
-            return mything ? e.Retlieving : e.Content ? Promise.resolve(e) : e.URI ? U.download(e) : e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
-              console.log('inside first return')
-                return U.isBin(e) ? (e.DataType = "Blob", e.Content = new Blob([t], {
-                    type: e["media-type"]
-                })) : (e.DataType = "Text", e.Content = new TextDecoder("utf-8").decode(new Uint8Array(t))), e.Retlieved = !0, delete e.Retlieving, e
-            })).catch((function(t) {
-              console.log('error inside U.extract')
-              console.log(t)
-                return delete e.Retlieving, Promise.reject(/404/.test(t) ? x.ErrorMessages.NotFound : /aborted/.test(t) ? x.ErrorMessages.Canceled : /fetch/.test(t) ? x.ErrorMessages.CORSBlocked : /not found/.test(t) || /invalid/.test(t) ? x.ErrorMessages.DataInvalid : t)
-            }))
+          if (mything) {
+            console.log('a')
+            return e.Retlieving;
+          } else if (e.Content) {
+            console.log('b:'+e.Content)
+            return Promise.resolve(e);
+          } else if (e.URI) {
+            console.log("c:"+e.URI)
+            return U.download(e);
+          }
+
+          console.log("last row of extraction")
+          console.log("e.Path is:"+e.Path)
+
+          return e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
+            console.log('inside first return')
+              return U.isBin(e) ? (e.DataType = "Blob", e.Content = new Blob([t], {
+                  type: e["media-type"]
+              })) : (e.DataType = "Text", e.Content = new TextDecoder("utf-8").decode(new Uint8Array(t))), e.Retlieved = !0, delete e.Retlieving, e
+          })).catch((function(t) {
+            console.log('error inside U.extract')
+            console.log(t)
+              return delete e.Retlieving, Promise.reject(/404/.test(t) ? x.ErrorMessages.NotFound : /aborted/.test(t) ? x.ErrorMessages.Canceled : /fetch/.test(t) ? x.ErrorMessages.CORSBlocked : /not found/.test(t) || /invalid/.test(t) ? x.ErrorMessages.DataInvalid : t)
+          }))
+
+
         }, U.download = function(e) {
             if ((e = U.src(e)).Retlieving) return e.Retlieving;
             if (e.Content) return Promise.resolve(e);
