@@ -5365,7 +5365,7 @@
               let alibaba = new URLSearchParams(window.location.search);
               let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
                 return {
-                    src: src
+                    src: new URL(e, t).href
                 }
             }))).length && (D.extensions = e), Array.isArray(D.extensions) ? D.extensions.filter((function(e) {
                 if (e.hasOwnProperty("-spell-of-activation-")) {
@@ -5508,14 +5508,14 @@ let alibaba;
 
                         alibaba = new URLSearchParams(window.location.search),
 
-                   //      F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
-                   // "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
-                   //     0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
+                        F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                   "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
+                       0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
 
 
 
-                         F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
-                    "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
+                    //      F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                    // "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
                         0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
                     })), F["use-menubar"] || (F["use-full-height"] = !0), (sML.UA.Trident || sML.UA.EdgeHTML) && (F["pagination-method"] = "auto"), F["reader-view-mode"] || (F["reader-view-mode"] = "paged"), U.Biscuits && W.bind("bibi:initialized-book", (function() {
                         var e = U.Biscuits.remember("Book");
@@ -5743,6 +5743,10 @@ let alibaba;
               }
             return !1
         }, U.src = function(e) {
+          console.log("U.src called-------->>>>>")
+          console.log(e.Path)
+          console.log(A.Package.Manifest[e.Path])
+          console.log(U.getContentType(e.Path))
             return A.Package.Manifest[e.Path] || (A.Package.Manifest[e.Path] = e), e["media-type"] || (e["media-type"] = U.getContentType(e.Path)), A.Package.Manifest[e.Path]
         }, U.RangeLoader = null, U.cancelExtraction = function(e) {
             return e.Resources && e.Resources.forEach((function(e) {
@@ -5750,7 +5754,13 @@ let alibaba;
             })), e.Retlieved ? Promise.resolve() : U.RangeLoader.abort(e.Path)
         }, U.extract = function(e) {
           console.log("extracting")
-            return (e = U.src(e)).Retlieving ? e.Retlieving : e.Content ? Promise.resolve(e) : e.URI ? U.download(e) : e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
+          let mything = (e = U.src(e)).Retlieving;
+          console.log(mything)
+          console.log(e.Retlieving)
+          console.log(e.Content)
+          console.log(e.URI)
+
+            return mything ? e.Retlieving : e.Content ? Promise.resolve(e) : e.URI ? U.download(e) : e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
                 return U.isBin(e) ? (e.DataType = "Blob", e.Content = new Blob([t], {
                     type: e["media-type"]
                 })) : (e.DataType = "Text", e.Content = new TextDecoder("utf-8").decode(new Uint8Array(t))), e.Retlieved = !0, delete e.Retlieving, e
