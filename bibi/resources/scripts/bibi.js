@@ -1600,6 +1600,8 @@
                                         })),
                                         or: function(e) {
                                           console.log("inside or func")
+                                          console.log(e)
+                                          console.log(this.Promised)
                                             return this.Promised.catch(e)
                                         },
                                         or_reject: function(e) {
