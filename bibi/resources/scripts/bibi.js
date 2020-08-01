@@ -5810,10 +5810,13 @@ let alibaba;
           console.log(e.URI)
 
             return mything ? e.Retlieving : e.Content ? Promise.resolve(e) : e.URI ? U.download(e) : e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
+              console.log('inside first return')
                 return U.isBin(e) ? (e.DataType = "Blob", e.Content = new Blob([t], {
                     type: e["media-type"]
                 })) : (e.DataType = "Text", e.Content = new TextDecoder("utf-8").decode(new Uint8Array(t))), e.Retlieved = !0, delete e.Retlieving, e
             })).catch((function(t) {
+              console.log('error inside U.extract')
+              console.log(t)
                 return delete e.Retlieving, Promise.reject(/404/.test(t) ? x.ErrorMessages.NotFound : /aborted/.test(t) ? x.ErrorMessages.Canceled : /fetch/.test(t) ? x.ErrorMessages.CORSBlocked : /not found/.test(t) || /invalid/.test(t) ? x.ErrorMessages.DataInvalid : t)
             }))
         }, U.download = function(e) {
