@@ -1571,7 +1571,7 @@
                                 a = [],
                                 s = function(e) {
                                     return {
-                                      console.log("folder is e?-->"+"folder" == e ?)
+                                      console.log("folder is e?-->"+("folder" == e ).toString())
                                         Promised: ("folder" == e ? U.download(o).then((function() {
                                           console.log("download and then...")
                                             return (A.PathDelimiter = "/") && ""
