@@ -1601,6 +1601,7 @@
                                     }
                                 };
                             console.log("checking something =============")
+                            console.log("A.Path is now: "+A.Path)
                             U.isToBeExtractedIfNecessary(A.Path) ? s("file").or((function() {
                               console.log("inside hm hm hm")
                                 return s("folder").or_reject()
@@ -5776,10 +5777,11 @@ let alibaba;
             if (F["extract-if-necessary"].includes("")) return !/(\.[\w\d]+)+$/.test(e);
             for (var t = F["extract-if-necessary"].length, n = 0; n < t; n++){
                 if (new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\."), "i").test(e)){
-                  console.log('gotcha')
+                  console.log('gotcha, isToBeExtractedIfNecessary returns true')
                   return !0;
                 }
               }
+            console.log('isToBeExtractedIfNecessary returns false')
             return !1
         }, U.src = function(e) {
           console.log("U.src called-------->>>>>")
