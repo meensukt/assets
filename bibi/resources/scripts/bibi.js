@@ -5856,9 +5856,7 @@ let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId'
                 t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "0-0";
             return new Promise((function(n, i) {
               console.log('trying rangereq')
-              console.log(e)
-              console.log(x.Script.src)
-              console.log(arguments[1])
+              console.log(arguments)
               console.log("Range bytes:"+t)
                 var r = new XMLHttpRequest;
                 r.onloadend = function() {
