@@ -5805,9 +5805,8 @@ let alibaba;
           console.log("extracting")
           let mything = (e = U.src(e)).Retlieving;
           console.log(mything)
-          console.log(e.Retlieving)
-          console.log(e.Content)
-          console.log(e.URI)
+          console.log(t)
+          console.log(e.Path)
 
             return mything ? e.Retlieving : e.Content ? Promise.resolve(e) : e.URI ? U.download(e) : e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
               console.log('inside first return')
