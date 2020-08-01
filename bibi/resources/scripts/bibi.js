@@ -1617,7 +1617,7 @@
                             console.log("checking something =============")
                             console.log("A.Path is now: "+A.Path)
                             let alibaba = new URLSearchParams(window.location.search);
-                            let src = A.Path + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
+                            let src = A.Path;
                             console.log("connecting: "+src)
                             //TODO
 
