@@ -5814,7 +5814,7 @@ let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId'
                   console.log(e)
                   return n(e);
                 }
-                console.log('nope, passed through')
+                console.log('nope, passed through');
                 (function() {
                     if (e.Content) {console.log('firstCOndition');console.log(e.Content);return Promise.resolve(e);}
                     if (e.URI || !A.ExtractionPolicy){
@@ -5822,7 +5822,7 @@ let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId'
                       console.log(A.ExtractionPolicy)
                        return U.download(e);
                      }
-                     console.log('OGMGMGOGMOGMOGMOG')
+                     console.log('OGMGMGOGMOGMOGMOG');
                     switch (A.ExtractionPolicy) {
                         case "on-the-fly":
                             console.log('on-the-fly');return U.extract(e);
