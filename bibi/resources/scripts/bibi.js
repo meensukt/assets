@@ -1570,9 +1570,9 @@
                             var o = ("Zine" == A.Type ? A.ZineData : A.Container).Source,
                                 a = [],
                                 s = function(e) {
+                                  console.log("folder is e?-->");
+                                  console.log(e);
                                     return {
-                                      console.log("folder is e?-->");
-                                      console.log(e);
                                         Promised: ("folder" == e ? U.download(o).then((function() {
                                           console.log("download and then...")
                                             return (A.PathDelimiter = "/") && ""
