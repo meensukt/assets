@@ -1649,6 +1649,8 @@
                     }))
                 },
                 loadContainer: function() {
+                  console.log("loadContainer")
+                  console.log(A.Container.Source)
                     return U.openDocument(A.Container.Source).then(k.loadContainer.process)
                 }
             };
@@ -1659,6 +1661,9 @@
           console.log(e.getElementsByTagName("rootfile")[0].getAttribute("full-path"));
             return A.Package.Source.Path = e.getElementsByTagName("rootfile")[0].getAttribute("full-path")
         }, k.loadPackage = function() {
+          console.log("loadPackage")
+          console.log(A.Package.Source)
+
             return U.openDocument(A.Package.Source).then(k.loadPackage.process)
         }, k.loadPackage.process = function(e) {
             var t = e.getElementsByTagName("package")[0],
@@ -1808,6 +1813,7 @@
         }, k.createCover.optimizeString = function(e) {
             return "<span>" + e.replace(/([ 　・／]+)/g, "</span><span>$1") + "</span>"
         }, k.loadNavigation = function() {
+          console.log("loadNavigation")
             return U.openDocument(A.Nav.Source).then((function(e) {
                 var t = H.Panel.BookInfo.Navigation = H.Panel.BookInfo.insertBefore(sML.create("div", {
                     id: "bibi-panel-bookinfo-navigation"
@@ -5366,7 +5372,7 @@
               let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
               // TODO
                 return {
-                    src: src
+                    src: new URL(e, t).href
                 }
             }))).length && (D.extensions = e), Array.isArray(D.extensions) ? D.extensions.filter((function(e) {
                 if (e.hasOwnProperty("-spell-of-activation-")) {
@@ -5476,7 +5482,7 @@
 
                     var e = document.getElementById("bibi-preset").getAttribute("data-bibi-bookshelf");
                     let newurl = new URL(e, location.href.split("?")[0]).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature');
-                    e && (N.bookshelf = newurl), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
+                    e && (N.bookshelf = new URL(e, location.href.split("?")[0]).href), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
 //TODO
                     var t = document.getElementById("bibi-book-data");
                     console.log(t)
@@ -5509,15 +5515,15 @@ let alibaba;
 
                         alibaba = new URLSearchParams(window.location.search),
 
-                   //      F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
-                   // "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
-                   //     0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
+                        F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                   "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
+                       0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
 
 //TODO
 
-                         F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
-                    "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
-                        0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
+                    //      F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                    // "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
+                    //     0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
 
                     })), F["use-menubar"] || (F["use-full-height"] = !0), (sML.UA.Trident || sML.UA.EdgeHTML) && (F["pagination-method"] = "auto"), F["reader-view-mode"] || (F["reader-view-mode"] = "paged"), U.Biscuits && W.bind("bibi:initialized-book", (function() {
                         var e = U.Biscuits.remember("Book");
