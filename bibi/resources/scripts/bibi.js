@@ -1591,10 +1591,14 @@
                                             return a.push(t = /404/.test(String(t)) ? x.ErrorMessages.NotFound : String(t).replace(/^Error: /, "")), U.log("Failed as ".concat(/^[aiueo]/i.test(A.Type) ? "an" : "a", " ").concat(A.Type, " ").concat(e, ": ") + t), Promise.reject()
                                         })),
                                         or: function(e) {
+                                          console.log("s("+e+").or")
                                             return this.Promised.catch(e)
                                         },
                                         or_reject: function(e) {
+                                          console.log("s("+e+").or_reject")
                                             return this.or((function() {
+                                              console.log("inside or_reject")
+                                              console.log(a)
                                                 return i(a.length < 2 || a[0] == a[1] ? a[0] : "as a file: ".concat(a[0], " / as a folder: ").concat(a[1]))
                                             }))
                                         }
