@@ -1595,6 +1595,7 @@
                                         })).catch((function(t) {
                                           console.log('failed')
                                           console.log(t)
+                                          console.log(x)
                                             return a.push(t = /404/.test(String(t)) ? x.ErrorMessages.NotFound : String(t).replace(/^Error: /, "")), U.log("Failed as ".concat(/^[aiueo]/i.test(A.Type) ? "an" : "a", " ").concat(A.Type, " ").concat(e, ": ") + t), Promise.reject()
                                         })),
                                         or: function(e) {
