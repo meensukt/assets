@@ -5723,16 +5723,10 @@ let alibaba;
             return t[i] || (t[i] = []), t[i].push(e), n
         }, U.isToBeExtractedIfNecessary = function(e) {
           console.log("extract_if_necessary??")
-          console.log(F["extract-if-necessary"])
-          console.log(F["extract-if-necessary"].includes("*"))
-          console.log(F["extract-if-necessary"].includes(""))
             if (!e || !F["extract-if-necessary"].length) return !1;
             if (F["extract-if-necessary"].includes("*")) return !0;
             if (F["extract-if-necessary"].includes("")) return !/(\.[\w\d]+)+$/.test(e);
             for (var t = F["extract-if-necessary"].length, n = 0; n < t; n++){
-              console.log(F["extract-if-necessary"][n])
-              console.log(new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\."), "i"))
-              console.log(e)
                 if (new RegExp(F["extract-if-necessary"][n].replace(/\./g, "\\."), "i").test(e)){
                   console.log('gotcha')
                   return !0;
@@ -5764,15 +5758,12 @@ let alibaba;
 
             i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
 
-console.log("downloading..."+url)
-console.log(e.URI)
-console.log(e.Path)
-console.log(A.Path)
+console.log("downloading..."+i)
 console.log("......")
 
             return e.Retlieving = new Promise((function(e, r) {
               console.log("do we ever got here1")
-                n.open("GET", url, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
+                n.open("GET", i, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
                     return 200 == n.status ? e() : r()
                 }, n.onerror = function() {
                     return r()
