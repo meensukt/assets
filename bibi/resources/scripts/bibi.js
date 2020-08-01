@@ -1555,14 +1555,20 @@
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                     return new Promise((function(t, n) {
                       console.log("created a new Promise")
-                      console.log(t)
-                      console.log(n)
                         var i = function(e) {
                             return n("Failed to open the book (".concat(e, ")"))
                         };
-                        if (!e.Book && !e.BookData) return i(x.ErrorMessages.DataInvalid);
+                        if (!e.Book && !e.BookData) {
+                          console.log("Promise error...")
+                          console.log(e.Book)
+                          console.log(e.BookData)
+                          return i(x.ErrorMessages.DataInvalid);}
                         var r = "string" == typeof e.Book ? "URI" : "string" == typeof e.BookData ? "Base64" : "object" == I(e.BookData) && e.BookData.size && e.BookData.type ? e.BookData.name ? "File" : "Blob" : "";
-                        if (!r) return i(x.ErrorMessages.DataInvalid);
+                        if (!r) {
+                          console.log("Promise error:r")
+                          console.log(r)
+                          return i(x.ErrorMessages.DataInvalid);
+                        }
                         if (A.Type = F.book ? F.zine ? "Zine" : "EPUB" : "", "EPUB" != A.Type && (A.ZineData = {
                                 Source: {
                                     Path: "zine.yaml"
@@ -1616,12 +1622,8 @@
                                 };
                             console.log("checking something =============")
                             console.log("A.Path is now: "+A.Path)
-                            let alibaba = new URLSearchParams(window.location.search);
-                            let src = A.Path;
-                            console.log("connecting: "+src)
-                            //TODO
 
-                            U.isToBeExtractedIfNecessary(src) ? s("file").or((function() {
+                            U.isToBeExtractedIfNecessary(A.Path) ? s("file").or((function() {
                               console.log("inside hm hm hm")
                                 return s("folder").or_reject()
                             })) : s("folder").or_reject()
