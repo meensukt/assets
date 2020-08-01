@@ -5823,7 +5823,6 @@ let alibaba;
 
           console.log("last row of extraction")
           console.log("e.Path is:"+e.Path)
-          console.log(U.RangeLoader.getBuffer)
 
           return e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
             console.log('inside first return')
