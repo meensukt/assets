@@ -1582,16 +1582,23 @@
                                           console.log("download and then...")
                                             return (A.PathDelimiter = "/") && ""
                                         })) : U.RangeLoader ? U.extract(o).then((function() {
+                                          console.log('on the fly')
+                                          console.log(U.RangeLoader)
                                             return "on-the-fly"
                                         })) : U.loadZippedBookData(A.Path).then((function() {
+                                          console.log('at-once')
                                             return "at-once"
                                         }))).then((function(n) {
+                                          console.log("then we consider A.ExtractionPolicy")
+                                          console.log(n)
                                             A.ExtractionPolicy = n, t("".concat(A.Type, " ").concat(e))
                                         })).catch((function(t) {
+                                          console.log('failed')
+                                          console.log(t)
                                             return a.push(t = /404/.test(String(t)) ? x.ErrorMessages.NotFound : String(t).replace(/^Error: /, "")), U.log("Failed as ".concat(/^[aiueo]/i.test(A.Type) ? "an" : "a", " ").concat(A.Type, " ").concat(e, ": ") + t), Promise.reject()
                                         })),
                                         or: function(e) {
-                                          console.log("s("+e+").or")
+                                          console.log("inside or func")
                                             return this.Promised.catch(e)
                                         },
                                         or_reject: function(e) {
@@ -1610,7 +1617,6 @@
                               console.log("inside hm hm hm")
                                 return s("folder").or_reject()
                             })) : s("folder").or_reject()
-                            console.log("yup we reached this side")
                         } else {
                           console.log("chose way2")
 
@@ -5408,7 +5414,7 @@
               let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
               // TODO
                 return {
-                    src: src
+                    src: new URL(e, t).href
                 }
             }))).length && (D.extensions = e), Array.isArray(D.extensions) ? D.extensions.filter((function(e) {
                 if (e.hasOwnProperty("-spell-of-activation-")) {
@@ -5518,7 +5524,7 @@
 
                     var e = document.getElementById("bibi-preset").getAttribute("data-bibi-bookshelf");
                     let newurl = new URL(e, location.href.split("?")[0]).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature');
-                    e && (N.bookshelf = newurl), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
+                    e && (N.bookshelf = new URL(e, location.href.split("?")[0]).href), document.body.getAttribute("data-bibi-book") && (N.book = document.body.getAttribute("data-bibi-book"));
 //TODO
                     var t = document.getElementById("bibi-book-data");
                     console.log(t)
@@ -5551,15 +5557,15 @@ let alibaba;
 
                         alibaba = new URLSearchParams(window.location.search),
 
-                   //      F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
-                   // "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
-                   //     0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
+                        F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                   "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
+                       0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
 
 //TODO
 
-                         F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
-                    "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
-                        0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
+                    //      F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature') : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                    // "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
+                    //     0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
 
                     })), F["use-menubar"] || (F["use-full-height"] = !0), (sML.UA.Trident || sML.UA.EdgeHTML) && (F["pagination-method"] = "auto"), F["reader-view-mode"] || (F["reader-view-mode"] = "paged"), U.Biscuits && W.bind("bibi:initialized-book", (function() {
                         var e = U.Biscuits.remember("Book");
