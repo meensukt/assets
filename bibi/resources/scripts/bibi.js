@@ -1626,6 +1626,8 @@
                                 };
                             console.log("checking something =============")
                             console.log("A.Path is now: "+A.Path)
+                            console.log("Range Loader>>>")
+                            console.log(U.RangeLoader)
 
                             U.isToBeExtractedIfNecessary(A.Path) ? s("file").or((function() {
                               console.log("inside hm hm hm")
@@ -5838,7 +5840,7 @@ let alibaba;
           console.log("e.Path is:"+e.Path)
 
           return e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
-            console.log('inside first return')
+            console.log('inside first return') //TODO
               return U.isBin(e) ? (e.DataType = "Blob", e.Content = new Blob([t], {
                   type: e["media-type"]
               })) : (e.DataType = "Text", e.Content = new TextDecoder("utf-8").decode(new Uint8Array(t))), e.Retlieved = !0, delete e.Retlieving, e
