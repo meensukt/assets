@@ -1569,6 +1569,10 @@
                           console.log(r)
                           return i(x.ErrorMessages.DataInvalid);
                         }
+                        console.log("Promise is still good...")
+                        console.log(e.Book)
+                        console.log(e.BookData)
+                        console.log(r)
                         if (A.Type = F.book ? F.zine ? "Zine" : "EPUB" : "", "EPUB" != A.Type && (A.ZineData = {
                                 Source: {
                                     Path: "zine.yaml"
