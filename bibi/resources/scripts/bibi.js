@@ -5807,6 +5807,7 @@ let alibaba;
           console.log(mything)
           console.log(t)
           console.log(e.Path)
+          console.log("^===extracting vars")
 
             return mything ? e.Retlieving : e.Content ? Promise.resolve(e) : e.URI ? U.download(e) : e.Retlieving = U.RangeLoader.getBuffer(e.Path).then((function(t) {
               console.log('inside first return')
