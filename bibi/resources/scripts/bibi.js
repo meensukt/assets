@@ -1340,6 +1340,7 @@
           console.log("getBookData")
           console.log(F["book-data"])
           console.log(F["book-data-mimetype"])
+          console.log(F)
             return F["book-data"] ? Promise.resolve({
                 BookData: F["book-data"],
                 BookDataMIMEType: F["book-data-mimetype"]
