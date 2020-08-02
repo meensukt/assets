@@ -5577,6 +5577,7 @@ let alibaba;
                         })), F["trustworthy-origins"].includes(U.Origin) || F["trustworthy-origins"].unshift(U.Origin),
                         console.log("F thinks book is:"+F.book),
                         console.log("F thinks bookshelf is:"+F.bookshelf),
+                        console.log(F)
 
                         alibaba = new URLSearchParams(window.location.search),
 
@@ -5642,6 +5643,8 @@ let alibaba;
                     };
                     for (var n in F.Modes) t(n);
                     W.dispatch("bibi:initialized-settings")
+                    console.log("End of initialization")
+                    console.log(F)
                 },
                 update: function(e) {
                     var t = {};
