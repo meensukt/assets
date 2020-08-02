@@ -15187,6 +15187,8 @@
                         throw i.abort(), new U;
                     case 9:
                         console.log("case 9 the problem!")
+                        console.log(n)
+                        console.log(n.headers)
                         console.log(n.headers.get("Content-Range"))
                         if (A = n.headers.get("Content-Range"), (f = A && A.match(/bytes (\d+)/)) && f[1]) {
                           console.log(f)
