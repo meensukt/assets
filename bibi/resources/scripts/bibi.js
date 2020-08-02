@@ -5877,7 +5877,7 @@ let alibaba;
 
             i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
 
-console.log("=============downloading..."+i)
+console.log("=============downloading..."+url)
 console.log("....................")
 
 // let alibaba = new URLSearchParams(window.location.search);
@@ -5886,7 +5886,9 @@ console.log("....................")
 
             return e.Retlieving = new Promise((function(e, r) {
               console.log("do we ever got here1")
-                n.open("GET", i, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
+                n.open("GET", url, !0), n.responseType = t ? "blob" : "text", n.onloadend = function() {
+                  console.log("downloadend")
+                  console.log(n)
                     return 200 == n.status ? e() : r()
                 }, n.onerror = function() {
                     return r()
