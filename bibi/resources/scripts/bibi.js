@@ -1625,6 +1625,7 @@
                                     }
                                 };
                             console.log("checking something =============")
+                            console.log(o)
                             console.log("A.Path is now: "+A.Path)
                             console.log("Range Loader>>>")
                             console.log(U.RangeLoader)
