@@ -1373,6 +1373,7 @@
             })).then((function() {
                 F.update(), _.updateOrientation(), _.resetStage()
             })).then((function() {
+              console.log("coverimage:"+A.CoverImage.Source)
                 return U.log("Creating Cover...", "<g:>"), A.CoverImage.Source ? (U.log("Cover Image: %O", A.CoverImage.Source), U.log("Will Be Created.", "</g>")) : U.log("Will Be Created. (w/o Image)", "</g>"), k.createCover()
             })).then((function() {
                 return A.Nav.Source ? (U.log("Loading Navigation...", "<g:>"), k.loadNavigation().then((function(e) {
@@ -1467,6 +1468,7 @@
             }))
         }, x.openBook = function(e) {
             return new Promise((function(e) {
+              console.log("openBook")
                 x.busyHerself.resolve(), H.Veil.close(), k.Opened = !0, document.body.click(), H.note(""), U.log("Enjoy Readings!", "</b>"), W.dispatch("bibi:opened", x.Status = x.Opened = "Opened"), W.dispatch("bibi:scrolled"), e()
             })).then((function() {
                 var t = _.hatchPage(e.Destination) || _.Pages[0];
@@ -5878,8 +5880,8 @@ let alibaba;
 console.log("=============downloading..."+i)
 console.log("....................")
 
-let alibaba = new URLSearchParams(window.location.search);
-let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
+// let alibaba = new URLSearchParams(window.location.search);
+// let src = new URL(e, t).href + "?OSSAccessKeyId=" + alibaba.get('OSSAccessKeyId') + "&Expires=" + alibaba.get('Expires') + "&Signature=" + alibaba.get('Signature')
 
 
             return e.Retlieving = new Promise((function(e, r) {
