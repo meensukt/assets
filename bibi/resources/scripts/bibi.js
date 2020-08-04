@@ -1529,7 +1529,7 @@
                 DataElement: null,
                 Container: {
                     Source: {
-                        Path: ""
+                        Path: "META-INF/container.xml"
                     } //TODO META-INF/container.xml
                 },
                 Package: {
@@ -5875,7 +5875,7 @@ let alibaba;
             let url = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path);
 
 
-            i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path) + e.Path;
+            i = e.URI ? e.URI : (/^([a-z]+:\/\/|\/)/.test(e.Path) ? "" : A.Path + "/") + e.Path;
 
 console.log("=============downloading..."+i)
 console.log("....................")
