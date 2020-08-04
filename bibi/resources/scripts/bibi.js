@@ -5586,7 +5586,7 @@ let alibaba;
                         alibaba = new URLSearchParams(window.location.search),
 
                     //without signature
-                        F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf + "/").href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
+                        F.book = !F["book-data"] && "string" == typeof F.book && F.book ? new URL(F.book, F.bookshelf).href  : "", !F["book-data"] && F.book && (true || console.log(new URL(F.book).origin)) && !F["trustworthy-origins"].includes(new URL(F.book).origin)) throw "The Origin of the Path of the Book Is Not Allowed.";
                    "number" != typeof F["parent-bibi-index"] && delete F["parent-bibi-index"], F.book || !window.File ? (F["accept-local-file"] = !1, F["accept-blob-converted-data"] = !1, F["accept-base64-encoded-data"] = !1) : F["accept-local-file"] = !(!F["accept-local-file"] || !(F["extract-if-necessary"].includes("*") || F["extract-if-necessary"].includes(".epub") || F["extract-if-necessary"].includes(".zip"))), F.autostart = !F.wait && (!F.book || (window.parent != window ? F["autostart-embedded"] : F.autostart)), F["start-in-new-window"] = window.parent != window && !F.autostart && F["start-embedded-in-new-window"], F["default-page-progression-direction"] = "rtl" == F["default-page-progression-direction"] ? "rtl" : "ltr", ["history", "bookmarks"].forEach((function(e) {
                        0 == F["max-" + e] && (F["use-" + e] = !1), F["use-" + e] || (F["max-" + e] = 0)
 
